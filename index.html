@@ -211,8 +211,11 @@
   .cert-img .cert-status{ grid-column:2 / -1; }
 
   @media (max-width:560px){
+    .cert{ grid-template-columns:1fr; }
+    .cert-meta{ text-align:left; }
     .cert-img{ grid-template-columns:1fr; }
     .cert-thumb-btn{ grid-row:auto; width:100%; height:auto; aspect-ratio:4/2.8; }
+    .cert-img .cert-status{ grid-column:1 / -1; }
   }
 
   /* lightbox */
@@ -305,6 +308,26 @@
       gap: 20px;
       padding-bottom: 0;
     }
+
+    /* nav: never wrap/overflow — scrolls horizontally if it must */
+    .nav-inner{ padding:14px 20px; gap:14px; }
+    .nav-mark{ font-size:11px; flex-shrink:0; }
+    header nav{
+      flex:1 1 auto; min-width:0;
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    header nav::-webkit-scrollbar{ display:none; }
+    nav ul{ gap:16px; flex-wrap:nowrap; }
+    nav a{ font-size:13px; white-space:nowrap; }
+
+    /* tighter side margins + vertical rhythm */
+    .wrap{ padding:0 20px; }
+    .hero{ padding:56px 0 40px; }
+    section{ padding:40px 0; }
+    footer{ padding:40px 0 48px; }
+    .sec-head h2{ font-size:22px; }
+    .hero p{ font-size:15.5px; }
   }
 </style>
 </head>
